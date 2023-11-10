@@ -13,293 +13,525 @@
     <meta name="p:domain_verify" content="e81c41339f784f8a7c633228dc4f2acc"/>
     <meta name="referrer" content="no-referrer-when-downgrade">
     <title>Job Template Email</title>
+    <style>
+        @font-face {
+            font-family: Proxima Nova;
+            src: url("https://api.edupassport.io/storage/static/fonts/proxima.otf");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: Proxima Nova;
+            src: url("https://api.edupassport.io/storage/static/fonts/proximanova-bold.otf");
+            font-weight: bold;
+            font-display: swap;
+        }
+
+        html {
+            background: #F7F7F7;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .header {
+            padding: 40px 48px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-media a {
+            text-decoration: none;
+            margin-left: 24px;
+        }
+
+        .content-section {
+            padding: 40px;
+            border-radius: 8px;
+            background-color: #FFFFFF;
+            margin: 0 28px;
+        }
+
+        .e-h1 {
+            color: #121A26;
+            font-family: Proxima Nova;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 30px;
+        }
+
+        .e-p {
+            color: #384860;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+        }
+
+        .apply-box {
+            background: url("./static/job/bg-1.png") no-repeat;
+            background-size: cover;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .e-h3 {
+            text-align: center;
+            color: #FFFFFF;
+            font-family: Inter;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .job-card {
+            width: 267px;
+            margin: 20px auto;
+            padding: 12px;
+            background-color: #FFFFFF;
+            border-radius: 6px;
+        }
+
+        .job-card-t {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+        }
+
+        .job-card-t-l img {
+            width: 52px;
+            height: 52px;
+        }
+
+        .e-job-title {
+            color: #1D2939;
+            font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 18px; /* 150% */
+        }
+
+        .e-job-price {
+            color: #6648FF;
+            font-family: Inter;
+            font-size: 9px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 9px; /* 100% */
+        }
+
+        .job-card-tags {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 12px;
+            gap: 8px;
+        }
+
+        .job-card-tag {
+            color: #1D2939;
+            font-family: Inter;
+            font-size: 9px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 9px; /* 100% */
+            padding: 4px 6px;
+        }
+
+        .tag-1 {
+            border-radius: 3px;
+            background: #E6E1FF;
+        }
+
+        .tag-2 {
+            border-radius: 3px;
+            background: #FFDB90;
+        }
+
+        .job-apply-on {
+            text-align: center;
+            color: #1D2939;
+            font-family: Inter;
+            font-size: 9px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 9px; /* 100% */
+            margin-top: 18px;
+        }
+
+        .job-edu-logo {
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .job-check-on {
+            text-align: center;
+            color: #FFFFFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .apply-the-job {
+            margin-top: 24px;
+        }
+
+        .apply-the-job a {
+            margin: 0 auto;
+            border-radius: 12px;
+            text-decoration: none;
+            background-color: #6648ff;
+            display: block;
+            width: 100px;
+            padding: 20px 40px;
+            color: #FFFFFF;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 22px; /* 22.4px */
+        }
+
+        .sale-section {
+            margin-top: 40px;
+        }
+
+        .e-h2 {
+            color: #384860;
+            font-family: Proxima Nova;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 140%;
+        }
+
+        .sale-content {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .sale-content-l {
+            width: 50%;
+            background: url("./static/job/bg-2.png") no-repeat center;
+            background-size: 100% 100%;
+        }
+
+        .sale-content-r {
+            padding: 20px;
+            background: #6648FF;
+        }
+
+        .sale-label {
+            color: #FFFFFF;
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Proxima Nova;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 140%; /* 44.8px */
+        }
+
+        .sale-tips {
+            margin-top: 13px;
+            color: #B9CEFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 21px */
+            letter-spacing: 0.2px;
+        }
+
+        .sale-btn {
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .sale-btn a {
+            display: block;
+            width: 172px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 6px;
+            background-color: #FFFFFF;
+            text-decoration: none;
+            color: #6648FF;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 160%; /* 22.4px */
+        }
+
+        .update-section {
+            padding: 40px;
+            background-color: #FFFFFF;
+            margin: 24px 28px;
+            border-radius: 8px;
+        }
+
+        .e-update-img {
+            margin-top: 16px;
+        }
+
+        .e-update-img img {
+            max-width: 100%;
+        }
+
+        .e-h3-update {
+            margin-top: 36px;
+            color: #384860;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Proxima Nova;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 140%; /* 33.6px */
+        }
+
+        .e-p-update {
+            margin-top: 16px;
+            color: #384860;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 24px */
+            letter-spacing: 0.2px;
+        }
+
+        .e-p-update a {
+            font-size: 16px;
+            color: #384860;
+        }
+
+        .e-update-btn {
+            margin-top: 36px;
+
+        }
+
+        .e-update-btn a {
+            display: block;
+            width: 172px;
+            padding: 20px 40px;
+            background-color: #6648ff;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 160%; /* 25.6px */
+            border-radius: 12px;
+        }
+        .footer-section{
+            background-color: #FFFFFF;
+            padding: 24px 40px;
+        }
+        .e-p-footer{
+            color: #202B3C;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 24px */
+            letter-spacing: 0.2px;
+        }
+        .e-p-footer a{
+            color: #2969FF;
+        }
+        .e-b-footer{
+            margin-top: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .e-b-footer span{
+            color: #202B3C;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 24px */
+            letter-spacing: 0.2px;
+        }
+        .e-b-footer a{
+            color: #2969FF;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 24px */
+            letter-spacing: 0.2px;
+            text-decoration-line: underline;
+        }
+        @media screen and (max-width: 768px) {
+            .header{
+                padding: 20px;
+                flex-direction: column-reverse;
+                gap: 12px;
+            }
+            .content-section{
+                padding: 20px;
+                margin: 0 14px;
+            }
+            .job-card{
+                width: auto;
+            }
+            .sale-content{
+                flex-direction: column-reverse;
+            }
+            .sale-content-l{
+                width: 100%;
+                height: 200px;
+                background-size: cover;
+            }
+            .sale-btn a{
+                margin:  0 auto;
+            }
+            .update-section{
+                padding: 20px;
+                margin: 20px 14px;
+            }
+            .footer-section{
+                padding: 20px;
+            }
+            .e-b-footer{
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-    <div class="logo">
-        <img src="https://api.edupassport.io/storage/static/logo.svg" alt="Logo">
-
+    <div class="header">
+        <a href="https://www.edupassport.io">
+            <img src="./static/job/logo.svg" alt="Logo">
+        </a>
+        <div class="header-media">
+            <a href="https://www.tiktok.com/@edu.passport"><img src="./static/job/tiktok.svg" alt="tiktok"></a>
+            <a href="https://www.twitter.com/edupassport_io"><img src="./static/job/twitter.svg" alt="twitter"></a>
+            <a href="https://www.facebook.com/edupassport.io"><img src="./static/job/facebook.svg" alt="facebook"></a>
+            <a href="https://www.instagram.com/edupassport.io"><img src="./static/job/instagram.svg"
+                                                                    alt="instagram"></a>
+            <a href="https://www.linkedin.com/company/edupassport-io"><img src="./static/job/linkedin.svg"
+                                                                           alt="linkedin"></a>
+        </div>
     </div>
-    <div class="content-box">
-        <div class="content-box-box">
-            <div class="e-h1">Hey there!</div>
-            <div class="e-p">
-                Since you've been using EDU Passport, we'd love to hear what you think! Share your thoughts with us by filling out this super quick survey.
-            </div>
-            <div class="e-p">[Form link]</div>
-            <div class="e-p">
-                Don't miss out on this opportunity to make your voice heard.
-            </div>
-            <div class="e-p">
-                <b>Thanks for your support,<br>
-                    EDU Passport Product Team</b>
-            </div>
-
+    <div class="content-section">
+        <div class="e-h1">Hey, look into this great opportunity!</div>
+        <div class="e-p"><br>Hi!<br><br></div>
+        <div class="e-p">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu auctor velit. Nunc tincidunt diam at
+            laoreet semper. Phasellus rhoncus nunc vel odio sagittis, eget accumsan leo vestibulum
         </div>
-
-        <div class="e-about-edupassport">
-            <div class="e-about-l">
-                <img src="https://api.edupassport.io/storage/static/logo-2.svg" alt="Logo">
-            </div>
-            <div class="e-about-r">
-                <div class="e-about-name">EDU Passport Team</div>
-                <div class="e-about-location">
-                    <img src="https://api.edupassport.io/storage/static/location.svg" alt="">
-
-                    13423 Blanco Road #524 San Antonio-78216, Texas, United States
+        <div class="apply-box">
+            <div class="e-h3">Apply this job now!</div>
+            <div class="job-card">
+                <div class="job-card-t">
+                    <div class="job-card-t-l">
+                        <img src="" alt="logo">
+                    </div>
+                    <div class="job-card-t-r">
+                        <div class="e-job-title">English Teacher (Daegu, Suseong - Gu)</div>
+                        <div class="e-job-price">KRW 2.400.000 - 2.600.000 / Mo</div>
+                    </div>
                 </div>
-                <div class="e-about-email">
-                    <img src="https://api.edupassport.io/storage/static/directinbox.svg" alt="">
-
-                    care@edupassport.io
+                <div class="job-card-tags">
+                    <div class="job-card-tag tag-1">TeachEnglishinKorea.org</div>
+                    <div class="job-card-tag tag-2">Our Picks For You 💜</div>
                 </div>
-                <div class="e-about-website">
-                    <img src="https://api.edupassport.io/storage/static/link.svg" alt="">
-
-                    edupassport.io
+                <div class="job-apply-on">
+                    Apply Now On
+                </div>
+                <div class="job-edu-logo">
+                    <a href="https://www.edupassport.io">
+                        <img src="./static/job/logo.svg" alt="Logo">
+                    </a>
                 </div>
             </div>
+            <div class="job-check-on">
+                Check it on
+            </div>
+            <div class="job-edu-logo">
+                <a href="https://www.edupassport.io">
+                    <img src="./static/job/logo-2.svg" alt="Logo">
+                </a>
+            </div>
         </div>
-
-        <div class="e-line"></div>
-
-        <div class="e-media">
-            <a href="https://www.instagram.com/edupassport.io" rel="instagram">
-                <img src="https://api.edupassport.io/storage/static/Instagram.svg" alt="">
-            </a>
-            <a href="https://www.facebook.com/edupassport.io" rel="facebook">
-                <img src="https://api.edupassport.io/storage/static/Facebook.svg" alt="">
-            </a>
-            <a href="https://www.twitter.com/edupassport_io" rel="x">
-                <img src="https://api.edupassport.io/storage/static/Twitter.svg" alt="">
-            </a>
-            <a href="#" rel="wechat">
-                <img src="https://api.edupassport.io/storage/static/WeChat.svg" alt="">
-            </a>
-            <a href="https://www.linkedin.com/company/edupassport-io" rel="linkedin">
-                <img src="https://api.edupassport.io/storage/static/LinkedIn.svg" alt="">
-            </a>
-            <a href="#" rel="youtube">
-                <img src="https://api.edupassport.io/storage/static/YouTube.svg" alt="">
-            </a>
-            <a href="#" rel="pinterest">
-                <img src="https://api.edupassport.io/storage/static/Pinterest.svg" alt="pinterest">
-            </a>
+        <div class="apply-the-job">
+            <a href="#">Apply the job</a>
         </div>
+        <div class="sale-section">
+            <div class="e-h2">EDU Program SALE!</div>
+            <div class="sale-content">
+                <div class="sale-content-l"></div>
+                <div class="sale-content-r">
+                    <div class="sale-label">25% OFF</div>
+                    <div class="sale-tips">
+                        DEALS <br> Ends on 31st October
+                    </div>
+                    <div class="sale-btn">
+                        <a href="#">Claim It Now!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="update-section">
+        <div class="e-h2">Update this week</div>
+        <div class="e-update-img">
+            <img src="./static/job/bg-3.png" alt="">
+        </div>
+        <div class="e-h3-update">
+            Introducing EDU Passport 3.0:
+            Your All-In-One Education Hub
+        </div>
+        <div class="e-p-update">
+            In the ever-evolving realm of education, seamless connection and information exchange are paramount. We have
+            some exciting news for you! <a href="#">EDU Passport 3.0 is here</a>, and it’s a major upgrade that will
+            transform your
+            learning experience.
+        </div>
+        <div class="e-update-btn">
+            <a href="#">Transformation Here</a>
+        </div>
+    </div>
+
+    <div class="footer-section">
+        <div class="e-p-footer">
+            Questions or faq? Contact us at <a href="mailto:ask@edupassport.io">ask@edupassport.io</a>.
+            If you'd rather not receive this kind of email, Don’t
+            want any more emails from EDU Passport? <a href="#">Unsubscribe</a>.
+        </div>
+        <div class="e-b-footer">
+            <span>© 2023 EDU Passport</span>
+            <a href="#">To be hired by EDU Passport?</a>
+        </div>
     </div>
 
 </div>
-
-<style>
-    @font-face {
-        font-family: Proxima Nova;
-        src: url("https://api.edupassport.io/storage/static/fonts/proxima.otf");
-        font-display: swap;
-    }
-
-    @font-face {
-        font-family: Proxima Nova;
-        src: url("https://api.edupassport.io/storage/static/fonts/proximanova-bold.otf");
-        font-weight: bold;
-        font-display: swap;
-    }
-
-    html {
-        background: #F7F7F7;
-    }
-
-    .logo {
-        margin-top: 56px;
-        text-align: center;
-    }
-
-    .content-box {
-        max-width: 560px;
-        margin: 56px auto;
-        padding: 0 24px;
-    }
-
-    .content-box-box{
-        border-radius: 24px;
-        padding: 58px 91px;
-        background: #FFFFFF;
-        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.08);
-    }
-
-    .e-h1 {
-        color: #000000;
-        font-family: Proxima Nova;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 120%; /* 24px */
-    }
-
-    .e-h3 {
-        margin-top: 33px;
-        color: #000000;
-        font-family: Proxima Nova;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 120%; /* 19.2px */
-    }
-
-    .e-p {
-        margin-top: 33px;
-        color: #000000;
-        font-family: Proxima Nova;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 120%; /* 19.2px */
-    }
-
-    .e-card {
-        border-radius: 8px;
-        background: #6648FF;
-        padding: 30px 90px 31px 37px;
-        margin-top: 18px;
-    }
-
-    .e-card-p {
-        color: #FFFFFF;
-        font-family: Proxima Nova;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 120%; /* 24px */
-    }
-
-    .e-card-email {
-        margin-top: 24px;
-        color: #FFFFFF;
-        font-family: Proxima Nova;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 800;
-        line-height: 120%; /* 19.2px */
-    }
-
-    .e-card-password {
-        color: #FFFFFF;
-        font-family: Proxima Nova;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 800;
-        line-height: 120%; /* 19.2px */
-    }
-
-    .e-card-btn {
-        margin-top: 16px;
-    }
-
-    .e-card-btn a {
-        display: block;
-        box-sizing: border-box;
-        border-radius: 7px;
-        background: #F9B019;
-        padding: 11px 13px;
-        width: 148px;
-        text-align: center;
-        text-decoration: none;
-        color: #000;
-
-        font-family: Inter;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 18px;
-    }
-
-    .e-best-regards {
-        margin-top: 60px;
-        color: #000000;
-        font-family: Proxima Nova;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 120%; /* 19.2px */
-    }
-
-    .e-sign {
-        margin-top: 32px;
-    }
-
-    .e-sign-name, .e-sign-position, .e-sign-company, .e-sign-email {
-        color: #000000;
-        font-family: Proxima Nova;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 120%;
-    }
-
-    .e-sign-email {
-        color: #6648ff;
-        font-weight: 700 !important;
-    }
-
-    .e-about-edupassport {
-        margin-top: 36px;
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-    }
-
-    .e-about-name {
-        color: #6648FF;
-        font-family: Proxima Nova;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        margin-bottom: 12px;
-    }
-
-    .e-about-location, .e-about-email, .e-about-website {
-        margin-bottom: 4px;
-        display: flex;
-        flex-direction: row;
-        gap: 4px;
-        align-items: center;
-
-        color: #000000;
-        font-family: Proxima Nova;
-        font-size: 10px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
-
-    .e-line {
-        width: 413px;
-        height: 1px;
-        background-color: #828282;
-        margin: 33px auto;
-    }
-
-    .e-media {
-        text-align: center;
-    }
-
-    .e-media a {
-        text-decoration: none;
-        margin: 0 8px;
-    }
-    @media screen and (max-width: 768px) {
-        .content-box {
-            max-width: 90%;
-        }
-        .content-box-box{
-            padding: 20px;
-        }
-        .e-line{
-            width: 80%;
-        }
-    }
-</style>
-
 </body>
 </html>
